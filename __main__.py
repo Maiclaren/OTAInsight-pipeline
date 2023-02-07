@@ -36,7 +36,7 @@ def main():
             for site in ['bookingdotcom', 'expedia']:
                 pdict[site] = client.get_rates(
                     sub_id=hotel['subscription_id'], from_date=start_date,
-                    los='2', ota=site, shop_length='250')
+                    los='5', ota=site, shop_length='250')
             rates_data = prepare.prep_data(pdict, date_stamp)
             folder = save.save_export(
                 rates_data, year=start_date.year, hotel=hotel_name,
